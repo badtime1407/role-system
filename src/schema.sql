@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS roles (
+  id INTEGER PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY,
+  username TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS roles_users (
+  role_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  PRIMARY KEY (role_id, user_id)
+);
